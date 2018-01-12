@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ALNoDataView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="错误文案" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdm-wR-J3H" userLabel="messageLable">
+                    <rect key="frame" x="153" y="323" width="69.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8b-oo-gdN" userLabel="reloadBtn">
+                    <rect key="frame" x="150.5" y="359" width="74" height="34"/>
+                    <state key="normal" title="重载文案">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="reloadBtnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="hlJ-nd-wXr"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDg-BZ-JtL" userLabel="imageBtn">
+                    <rect key="frame" x="137" y="208" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="OqO-o4-dtk"/>
+                        <constraint firstAttribute="width" constant="100" id="ZaD-U6-8Nv"/>
+                    </constraints>
+                    <state key="normal">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="tdm-wR-J3H" firstAttribute="top" secondItem="oDg-BZ-JtL" secondAttribute="bottom" constant="15" id="J1U-Xz-Mag"/>
+                <constraint firstItem="oDg-BZ-JtL" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="WRJ-az-QfN"/>
+                <constraint firstItem="H8b-oo-gdN" firstAttribute="top" secondItem="tdm-wR-J3H" secondAttribute="bottom" constant="15" id="iye-CZ-p33"/>
+                <constraint firstItem="tdm-wR-J3H" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="kDE-IT-lc8"/>
+                <constraint firstItem="H8b-oo-gdN" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="qMG-8B-sqK"/>
+                <constraint firstItem="tdm-wR-J3H" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="wk8-9h-jZQ"/>
+            </constraints>
+            <connections>
+                <outlet property="imageBtn" destination="oDg-BZ-JtL" id="Db9-Si-V84"/>
+                <outlet property="messageLabel" destination="tdm-wR-J3H" id="1ax-jA-aDg"/>
+                <outlet property="reloadBtn" destination="H8b-oo-gdN" id="XVo-TR-MSp"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
+        </view>
+    </objects>
+</document>
