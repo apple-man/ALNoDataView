@@ -4,9 +4,11 @@ No data tip view in OC language
 Hello there! I'm **ALNoDataView**,the easy no data tipview in OC;
 
 ##用法
+
 把ALNoDataView的.h和.m拖到你的项目中，就能使用。
 
 ##原理
+
 初始化方法有两种：
 
 * +(instancetype)noDataView;
