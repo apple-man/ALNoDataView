@@ -38,8 +38,4 @@ typedef NS_ENUM(NSUInteger, NoDataType){
 /** 实例化方法 */
 +(instancetype)noDataView;
 
-//+(instancetype)noDataViewDelegate:(id<ALNoDataViewDelegate>)delegate;
-//
-//+(instancetype)noDataViewAction:(void(^)(void))action;
-
 @end

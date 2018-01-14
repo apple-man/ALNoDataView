@@ -19,10 +19,29 @@
 +(instancetype)noDataView{
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
 }
-
+- (instancetype)initWithCoder:(NSCoder *)aDecoder{
+    if (self = [super initWithCoder:aDecoder]) {
+        
+    }
+    return self;
+}
 - (void)awakeFromNib{
     [super awakeFromNib];
     [self setupUI];
+}
+
+- (instancetype)init{
+    if (self = [super init]) {
+    }
+    return self;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame{
+    if (self = [super initWithFrame:frame]) {
+        self = [[self class] noDataView];
+        [self setupUI];
+    }
+    return self;
 }
 
 /** 如果contentView设置了alpha，就会无法响应事件，所以要重写这个touchBegan方法 */
@@ -45,7 +64,7 @@
      self.imageBtn.buttonType = UIButtonTypeCustom;
      self.reloadBtn.buttonType = UIButtonTypeCustom;
      */
-    self.reloadBtn.layer.borderColor = [UIColor redColor].CGColor;
+    self.reloadBtn.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.reloadBtn.layer.borderWidth = 1;
     self.reloadBtn.layer.cornerRadius = 4;
     self.reloadBtn.layer.masksToBounds = YES;
@@ -55,7 +74,7 @@
         如果在SB和xib中设置的width和height大于文字的内容的width和height。设置的边框也会和文字有距离。
      */
     
-    self.reloadBtn.contentEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
+    self.reloadBtn.contentEdgeInsets = UIEdgeInsetsMake(5, 10, 5, 10);
     
 }
 

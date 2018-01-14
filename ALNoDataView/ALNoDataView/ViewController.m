@@ -29,11 +29,13 @@
 
 -(void)setupUI{
     self.requestBtn.layer.borderWidth = 1;
-    self.requestBtn.layer.borderColor = [UIColor purpleColor].CGColor;
+    self.requestBtn.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.requestBtn.backgroundColor = [UIColor whiteColor];
+    [self.requestBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.requestBtn setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
     self.requestBtn.layer.cornerRadius = 5;
     self.requestBtn.layer.masksToBounds = YES;
-    self.requestBtn.contentEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
+    self.requestBtn.contentEdgeInsets = UIEdgeInsetsMake(5, 10, 5, 10);
 }
 
 - (IBAction)requestBtnAction:(UIButton *)sender {
@@ -58,12 +60,10 @@
 #pragma mark - <ALNoDataViewDelegate>
 - (void)noDataViewReloadAction{
     /**
-     控制器VC没有所谓的frame的设置，设置的也是VC的view。
+     控制器VC没有所谓的frame的设置，设置的也是VC的view，view的frame默认占据整个屏幕。
      UIView显示有两点，大小和位置，还有事件处理
      */
     ALActionVC *VC = [ALActionVC new];
-    // 为什么不设置view的frame，这是因为frame是子控件相对于父控件的位置设置，bound设置父控件基于自己，实际就是size的设置，origin原点基于自己，是（0,0）
-    VC.view.bounds = self.view.bounds;
     [self presentViewController:VC animated:YES completion:nil];
 }
 
@@ -71,15 +71,15 @@
 #pragma mark - getter
 - (ALNoDataView *)noDataView{
     if (!_noDataView) {
-        _noDataView = [ALNoDataView noDataView];
+        // 实例化方式两种
+        //_noDataView = [ALNoDataView noDataView];
+        _noDataView = [ALNoDataView new];
         _noDataView.delegate = self;
         _noDataView.hidden = YES;
-        
          // 此处也可以不初始化请求响应文案，根据网络返回类型，直接设置noDataType
 //        _noDataView.imageName = @"errorImage1";
 //        _noDataView.message = @"请求失败...";
 //        _noDataView.reloadMessage = @"刷新一下";
-        
         [self.view addSubview:_noDataView];
     }
     return _noDataView;
