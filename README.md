@@ -20,7 +20,7 @@ Hello there! I'm **ALNoDataView**,the easy no data tipview in OC;
 
 * 遵守协议ALNoDataViewDelegate,实现代理方法
 
-	* - (void)noDataViewReloadAction;
+	* -(void)noDataViewReloadAction;
 
 * 成为代理
 
